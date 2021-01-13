@@ -9,7 +9,7 @@ namespace TestBox
             Console.WriteLine("Hello World!");
             Console.WriteLine($"Assembly: {ThisAssembly.AssemblyVersion}");
             Console.WriteLine($"Assembly: {ThisAssembly.AssemblyFileVersion}");
-            Console.WriteLine($"Another release 2");
+            Console.WriteLine($"Another release 3");
         }
     }
 }
