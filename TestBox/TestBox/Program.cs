@@ -7,6 +7,8 @@ namespace TestBox
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.WriteLine($"Assembly: {ThisAssembly.AssemblyVersion}");
+            Console.WriteLine($"Assembly: {ThisAssembly.AssemblyFileVersion}");
         }
     }
 }
