@@ -1,0 +1,16 @@
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Deploy description'
+        required: true
+        type: string
+
+jobs:
+    DeployTo:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Print ref
+          id: step_ONE
+          run: |
+            echo "REFF: ${{ github.ref }}"
