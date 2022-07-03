@@ -12,9 +12,11 @@ jobs:
     DeployTo:
         runs-on: ubuntu-latest
         steps:
+        - name: print all
+          id: step_zero
+          run: echo "$GITHUB_CONTEXT"
+          
         - name: Print ref
           id: step_ONE
           run: |
-            echo "REFF: ${{ github.ref }}"
-            echo "BASE REFF ${{ github }}"
-
+            echo "REFF: ${{ github.ref }}"  
