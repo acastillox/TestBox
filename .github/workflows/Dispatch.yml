@@ -12,9 +12,9 @@ jobs:
     DeployTo:
         runs-on: ubuntu-latest
         steps:
-        - name: print all
-          id: step_zero
-          run: echo "$GITHUB_CONTEXT"
+        - name: Dump GitHub context
+          id: github_context_step
+          run: echo '${{ toJSON(github) }}'
           
         - name: Print ref
           id: step_ONE
