@@ -16,5 +16,5 @@ jobs:
           id: step_ONE
           run: |
             echo "REFF: ${{ github.ref }}"
-            echo "BASE REFF ${{ github.base_ref }}"
+            echo "BASE REFF ${{ github }}"
 
