@@ -23,10 +23,14 @@ jobs:
             case ${{ inputs.environment }} in
             dev)
             echo "S3_FOLDER=https://deploy.dev.hooks.yggs.io/" >> $GITHUB_ENV
+            ;;
             rc)
             echo "S3_FOLDER=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
+            ;;
             prod)
             echo "S3_FOLDER=https://deploy.prod.hooks.yggs.io/" >> $GITHUB_ENV
+            ;;
+            esac
           
         - name: Print ref
           id: step_ONE
