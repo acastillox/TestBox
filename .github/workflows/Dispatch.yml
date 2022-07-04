@@ -27,8 +27,8 @@ jobs:
               rc) URL_DEPLOY="https://deploy.rc.hooks.yggs.io/"; S3_FOLDER="rc";;
               prod) URL_DEPLOY="https://deploy.prod.hooks.yggs.io/"; S3_FOLDER="prod";;
             esac
-            echo URL_DEPLOY >> $GITHUB_ENV
-            echo S3_FOLDER >> $GITHUB_ENV
+            echo "URL_DEPLOY" >> $GITHUB_ENV
+            echo "S3_FOLDER" >> $GITHUB_ENV
           
         - name: Print ref
           id: step_ONE
