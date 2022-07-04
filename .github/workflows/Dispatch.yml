@@ -20,20 +20,19 @@ jobs:
         
         - name: Define vars
           run: |
+            
+            
             case ${{ inputs.environment }} in
-            dev)
-            echo "S3_FOLDER=https://deploy.dev.hooks.yggs.io/" >> $GITHUB_ENV
-            ;;
-            rc)
-            echo "S3_FOLDER=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
-            ;;
-            prod)
-            echo "S3_FOLDER=https://deploy.prod.hooks.yggs.io/" >> $GITHUB_ENV
-            ;;
+              dev) URL_DEPLOY="https://deploy.dev.hooks.yggs.io/"; S3_FOLDER="dev";;
+              rc) URL_DEPLOY="https://deploy.rc.hooks.yggs.io/"; S3_FOLDER="rc";;
+              prod) URL_DEPLOY="https://deploy.prod.hooks.yggs.io/"; S3_FOLDER="prod";;
             esac
+            echo URL_DEPLOY >> $GITHUB_ENV
+            echo S3_FOLDER >> $GITHUB_ENV
           
         - name: Print ref
           id: step_ONE
           run: |
             echo "REFF: ${{ github.ref }}"
-            echo "BASE REFF ${{ env.S3_FOLDER }}"
+            echo "S3: ${{ env.S3_FOLDER }}"
+            echo "URL: ${{ env.S3_FOLDER }}"
