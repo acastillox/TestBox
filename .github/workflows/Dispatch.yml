@@ -3,17 +3,29 @@ name: Deploy Dispatch
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Deploy description'
+      environment:
+        description: 'Enviroment'
         required: true
-        type: string
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - rc
+        - prod
 
 jobs:
     DeployTo:
         runs-on: ubuntu-latest
         steps:
+        
+        - name: Define vars
+          run: |
+            case ${{ inputs.environment }} in
+            dev)
+            echo "S3_FOLDER=https://deploy.dev.hooks.yggs.io/" >> $GITHUB_ENV
+          
         - name: Print ref
           id: step_ONE
           run: |
             echo "REFF: ${{ github.ref }}"
-            echo "BASE REFF ${{ github.base_ref }}"
+            echo "BASE REFF ${{ env.S3_FOLDER }}"
