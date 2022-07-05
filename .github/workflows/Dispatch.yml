@@ -36,8 +36,8 @@ jobs:
                 S3_FOLDER="prod"
               ;;
             esac
-            echo "URL_DEPLOY" >> $GITHUB_ENV
-            echo "S3_FOLDER" >> $GITHUB_ENV
+            echo URL_DEPLOY >> $GITHUB_ENV
+            echo S3_FOLDER >> $GITHUB_ENV
           
         - name: Print ref
           id: step_ONE
