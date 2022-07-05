@@ -21,21 +21,9 @@ jobs:
         - name: Define vars
           run: |
             case ${{ inputs.environment }} in
-              dev)
-              URL_DEPLOY="URL_DEPLOY=https://deploy.dev.hooks.yggs.io/"
-              S3_BUCKET="S3_BUCKET=dev-yggs-config"
-              S3_FOLDER="S3_FOLDER=Builds/"
-              ;;
-              rc)
-              echo "URL_DEPLOY=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
-              echo "S3_BUCKET=yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER=rc/Builds/" >> $GITHUB_ENV
-              ;;
-              prod)
-              echo "URL_DEPLOY=https://deploy.prod.hooks.yggs.io/" >> $GITHUB_ENV
-              echo "S3_BUCKET=yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER=prod/Builds/" >> $GITHUB_ENV
-              ;;
+              dev) URL_DEPLOY="URL_DEPLOY=https://deploy.dev.hooks.yggs.io/"; S3_BUCKET="S3_BUCKET=dev-yggs-config"; S3_FOLDER="S3_FOLDER=Builds/" ;;
+              rc) URL_DEPLOY="URL_DEPLOY=https://deploy.rc.hooks.yggs.io/"; S3_BUCKET="S3_BUCKET=yggs-config"; S3_FOLDER="S3_FOLDER=rc/Builds/" ;;
+              prod) URL_DEPLOY="URL_DEPLOY=https://deploy.prod.hooks.yggs.io/"; S3_BUCKET="S3_BUCKET=yggs-config"; S3_FOLDER="S3_FOLDER=prod/Builds/" ;;
             esac
             
             echo $URL_DEPLOY >> $GITHUB_ENV
