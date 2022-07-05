@@ -24,15 +24,15 @@ jobs:
             
             case ${{ inputs.environment }} in
               dev)
-                URL_DEPLOY="https://deploy.dev.hooks.yggs.io/"
+                URL_DEPLOY="udev"
                 S3_FOLDER="dev"
               ;;
               rc)
-                URL_DEPLOY="https://deploy.rc.hooks.yggs.io/"
+                URL_DEPLOY="urc"
                 S3_FOLDER="rc"
               ;;
               prod)
-                URL_DEPLOY="https://deploy.prod.hooks.yggs.io/"
+                URL_DEPLOY="uprod"
                 S3_FOLDER="prod"
               ;;
             esac
