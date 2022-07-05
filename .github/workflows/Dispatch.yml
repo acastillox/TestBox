@@ -21,25 +21,17 @@ jobs:
         - name: Define vars
           run: |
             case ${{ inputs.environment }} in
-              dev)
-                URL="udev"
-                S3="dev"
-              ;;
-              rc)
-                URL="urc"
-                S3="rc"
-              ;;
-              prod)
-                URL="uprod"
-                S3="prod"
-              ;;
+              dev) URL="https://deploy.dev.hooks.yggs.io/"; BUCKET="dev-yggs-config"; PATH="Builds/";;
+              rc) URL="https://deploy.rc.hooks.yggs.io/"; BUCKET="yggs-config"; PATH="rc/Builds/";;
+              prod) URL="https://deploy.prod.hooks.yggs.io/"; BUCKET="yggs-config"; PATH="prod/Builds/";;
             esac
             echo "URL_DEPLOY=URL" >> $GITHUB_ENV
-            echo "S3_FOLDER=S3" >> $GITHUB_ENV
+            echo "S3_BUCKET=BUCKET" >> $GITHUB_ENV
+            echo "S3_FOLDER=PATH" >> $GITHUB_ENV
           
         - name: Print ref
           id: step_ONE
           run: |
-            echo "REFF: ${{ github.ref }}"
+            echo "REFF: ${{ github.URL_DEPLOY }}"
+            echo "URL: ${{ env.S3_BUCKET }}"
             echo "S3: ${{ env.S3_FOLDER }}"
-            echo "URL: ${{ env.S3_FOLDER }}"
