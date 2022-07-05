@@ -22,9 +22,9 @@ jobs:
           run: |
             case ${{ inputs.environment }} in
               dev)
-              echo "URL_DEPLOY=https://deploy.dev.hooks.yggs.io/" >> $GITHUB_ENV
-              echo "S3_BUCKET=dev-yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER=Builds/" >> $GITHUB_ENV
+              URL_DEPLOY="https://deploy.dev.hooks.yggs.io/"
+              S3_BUCKET="dev-yggs-config"
+              S3_FOLDER="Builds/"
               ;;
               rc)
               echo "URL_DEPLOY=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
@@ -37,6 +37,10 @@ jobs:
               echo "S3_FOLDER=prod/Builds/" >> $GITHUB_ENV
               ;;
             esac
+            
+            echo $URL_DEPLOY >> $GITHUB_ENV
+            echo $S3_BUCKET >> $GITHUB_ENV
+            echo $S3_FOLDER >> $GITHUB_ENV
           
         - name: Print ref
           id: step_ONE
