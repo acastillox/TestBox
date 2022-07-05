@@ -26,7 +26,7 @@ jobs:
               prod) URL="https://deploy.prod.hooks.yggs.io/"; BUCKET="yggs-config"; PATH="prod/Builds/";;
             esac
             echo URL >> $GITHUB_ENV
-            BUCKET >> $GITHUB_ENV
+            echo BUCKET >> $GITHUB_ENV
             echo "S3_FOLDER=PATH" >> $GITHUB_ENV
           
         - name: Print ref
