@@ -33,7 +33,7 @@ jobs:
         - name: Print ref
           id: step_ONE
           run: |
-            echo "REFF: ${{ github.URL_DEPLOY }}"
+            echo "REFF: ${{ github.ref }}"
             echo "URL: ${{ env.URL_DEPLOY }}"
             echo "BUCKET: ${{ env.S3_BUCKET }}"
             echo "FOLDER: ${{ env.S3_FOLDER }}"
