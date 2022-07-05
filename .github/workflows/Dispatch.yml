@@ -25,7 +25,7 @@ jobs:
               rc) URL="https://deploy.rc.hooks.yggs.io/"; BUCKET="yggs-config"; PATH="rc/Builds/";;
               prod) URL="https://deploy.prod.hooks.yggs.io/"; BUCKET="yggs-config"; PATH="prod/Builds/";;
             esac
-            echo "URL_DEPLOY=URL" >> $GITHUB_ENV
+            echo "URL_DEPLOY=" + URL >> $GITHUB_ENV
             echo "S3_BUCKET=BUCKET" >> $GITHUB_ENV
             echo "S3_FOLDER=PATH" >> $GITHUB_ENV
           
@@ -33,5 +33,6 @@ jobs:
           id: step_ONE
           run: |
             echo "REFF: ${{ github.URL_DEPLOY }}"
-            echo "URL: ${{ env.S3_BUCKET }}"
-            echo "S3: ${{ env.S3_FOLDER }}"
+            echo "URL: ${{ env.URL_DEPLOY }}"
+            echo "BUCKET: ${{ env.S3_BUCKET }}"
+            echo "FOLDER: ${{ env.S3_FOLDER }}"
