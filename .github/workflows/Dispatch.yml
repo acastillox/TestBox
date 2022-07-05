@@ -22,9 +22,9 @@ jobs:
           run: |
             case ${{ inputs.environment }} in
               dev)
-              URL_DEPLOY="https://deploy.dev.hooks.yggs.io/"
-              S3_BUCKET="dev-yggs-config"
-              S3_FOLDER="Builds/"
+              URL_DEPLOY="URL_DEPLOY=https://deploy.dev.hooks.yggs.io/"
+              S3_BUCKET="S3_BUCKET=dev-yggs-config"
+              S3_FOLDER="S3_FOLDER=Builds/"
               ;;
               rc)
               echo "URL_DEPLOY=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
