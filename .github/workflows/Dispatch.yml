@@ -24,17 +24,17 @@ jobs:
               dev)
               echo "URL_DEPLOY=https://deploy.dev.hooks.yggs.io/" >> $GITHUB_ENV
               echo "S3_BUCKET=dev-yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER="Builds/" >> $GITHUB_ENV
+              echo "S3_FOLDER=Builds/" >> $GITHUB_ENV
               ;;
               rc)
               echo "URL_DEPLOY=https://deploy.rc.hooks.yggs.io/" >> $GITHUB_ENV
               echo "S3_BUCKET=yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER="rc/Builds/" >> $GITHUB_ENV
+              echo "S3_FOLDER=rc/Builds/" >> $GITHUB_ENV
               ;;
               prod)
               echo "URL_DEPLOY=https://deploy.prod.hooks.yggs.io/" >> $GITHUB_ENV
               echo "S3_BUCKET=yggs-config" >> $GITHUB_ENV
-              echo "S3_FOLDER="prod/Builds/" >> $GITHUB_ENV
+              echo "S3_FOLDER=prod/Builds/" >> $GITHUB_ENV
               ;;
             esac
           
